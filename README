@@ -13,6 +13,7 @@ There is only two widgets for now:
 
 1. UI.ListView
 2. UI.SelectView
+3. TreeView
 
 Themes
 ------
