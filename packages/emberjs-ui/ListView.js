@@ -1,5 +1,5 @@
 var get = Ember.get, set = Ember.set;
-UI = {};
+UI = UI || {};
 UI.ListView = Em.CollectionView.extend({
 	tagName: "ul",
 	viewName: 'ListViewContainer',
