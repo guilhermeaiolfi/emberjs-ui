@@ -15,6 +15,8 @@ There is only two widgets for now:
 3. TreeView
 4. UI.ScrollerView
 5. UI.VirtualScrollerView ([jsFiddle](http://www.jsfiddle.net/Z7SCN/12/))
+6. Ui.CalendarView (jsFiddle](http://jsfiddle.net/guilhermeaiolfi/enguK/))
+7. Ui.SliderView (jsFiddle](http://jsfiddle.net/guilhermeaiolfi/NPkru/))
 
 ## Themes
 
