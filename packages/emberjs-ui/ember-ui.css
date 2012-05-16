@@ -198,3 +198,47 @@
     background-color: #009ec3; 
     color: #FFF; 
 }
+
+.ember-slider 
+{ 
+    position: relative; 
+    border: 1px solid #DDD;   
+}
+.ember-slider-knob 
+{
+    margin-left: -10px; 
+    position: absolute; 
+    height: 18px; 
+    width: 18px; 
+    background-color: #f1f1f1; 
+    top: -5px; 
+    border-radius: 3px; 
+    border: 1px solid #444;
+}
+
+.ember-slider-vertical
+{ 
+    width: 10px; 
+    height: 100%; 
+}
+.ember-slider-horizontal
+{ 
+    width: 100%; height: 10px;  
+}
+
+.ember-slider .ember-state-active 
+{ 
+    background-color: #c1c1c1; 
+}
+.ember-slider-vertical .ember-slider-knob 
+{ 
+    margin-left: -5px; 
+    margin-top: -10px; 
+}
+.ember-slider .ember-slider-bar 
+{ 
+    position: absolute; 
+    height: 100%;
+    width: 100%; 
+    background-color: #5AA4D7; 
+}
