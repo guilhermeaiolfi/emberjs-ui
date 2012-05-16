@@ -113,3 +113,88 @@
 	float: none;
 	border-left: 0px;
 }
+
+.calendar-view 
+{ 
+    font-size: 11px; 
+    width: 189px; 
+    display: table; 
+    border: 1px solid #c1c1c1; 
+    padding: 3px; 
+}
+.calendar-view .days span, .calendar-view .days-week span 
+{ 
+    float: left; 
+    list-style: none; 
+    margin: 1px; 
+    width: 19px; 
+    padding: 2px; 
+    border: 1px solid #c1c1c1; 
+    text-align: right; 
+    cursor: default; 
+    display: table; 
+    font-size: 11px; 
+}
+.calendar-view .days-week span 
+{ 
+    text-align: center; 
+    color: #777; 
+    font-weight: bold; 
+    border: 1px solid #FFF; 
+}
+
+.calendar-view .days .selected 
+{ 
+    background-color: yellow; 
+    border: 1px solid #c1c1c1; 
+}
+.calendar-view .days .day-over 
+{ 
+    border: 1px solid #253E5C; 
+}
+.calendar-view .days .not-day 
+{ 
+    border: 1px solid #FFFFFF; 
+}
+.calendar-view .calendar-controls 
+{ 
+    clear: both; 
+    display: table; 
+    padding: 2px; 
+}
+.calendar-view .calendar-controls a 
+{ 
+    border-radius: 2px; 
+    font-size: 11px; 
+    cursor: default; 
+    float: left; 
+    width: 25px; 
+    text-align: center; 
+}
+.calendar-view .calendar-controls .today 
+{ 
+    width: 85px; 
+    text-align: center; 
+}
+.calendar-view .current 
+{ 
+    padding: 2px; 
+    border-radius: 2px; 
+    font-size: 13px; 
+    background: -webkit-linear-gradient(top, #00b7ea 0%,#009ec3 100%);
+    background-color: #009ec3; 
+    color: #FFF;
+    display: table; 
+    margin: 2px 0 2px 0; 
+    border-top: 1px solid #00B7EA;
+    border-bottom: 1px solid #00B7EA; 
+    text-align: center; 
+    clear: both; 
+    width: 100%;
+}
+.calendar-view .calendar-controls a:hover 
+{ 
+    background: -webkit-linear-gradient(top, #00b7ea 0%,#009ec3 100%); 
+    background-color: #009ec3; 
+    color: #FFF; 
+}
