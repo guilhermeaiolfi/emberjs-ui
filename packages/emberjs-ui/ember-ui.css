@@ -242,3 +242,52 @@
     width: 100%; 
     background-color: #5AA4D7; 
 }
+
+/** SPINNER **/
+.ember-spinner 
+{ 
+    height: 23px; 
+    border: 1px solid #c1c1c1; 
+    position: relative; 
+    display: block; 
+} 
+.ember-spinner-input 
+{ 
+    height: 100%; 
+    float: left; margin: 0 15px 0 0; 
+    line-height: 23px; 
+    vertical-align: middle; 
+    text-align: right; 
+}
+.ember-spinner-buttons 
+{ 
+    border-left: 1px solid #ddd; 
+    width: 13px; 
+    height: 100%; 
+    position: absolute; 
+    top: 0; 
+    right: 0;  
+}
+.ember-spinner-up-btn, .ember-spinner-down-btn 
+{  
+    width: 100%; 
+    cursor: default; 
+    font-size: 8px; 
+    text-align: center;
+}
+.ember-spinner-up-btn 
+{
+    top: 0; 
+    right: 0; 
+    position: absolute; 
+    height: 50%; 
+    border-bottom: 1px solid #ddd; 
+}
+.ember-spinner-down-btn 
+{ 
+    bottom: 0; 
+    right: 0; 
+    position: absolute; 
+    height: 50%; 
+    margin-top: 1px;
+}
