@@ -1,4 +1,4 @@
-UI = UI || {};
+var UI = UI || {};
 
 var get = Ember.get, fmt = Ember.String.fmt, set = Ember.set;
 
@@ -82,7 +82,12 @@ UI.ScrollerView = Ember.ContainerView.extend({
       if (this.get('replaceThumb'))
       {
         this.$().css("position", 'relative');
+        var mouseWheel = $.proxy(this.mouseWheel, this);
+        this.$().on("mousewheel", mouseWheel);
       }
+  },
+  mouseWheel: function(evt, delta) {
+      this.thumb.$().scrollTop(this.thumb.$().scrollTop() - (delta * 30));
   },
   setScrollTop: function(scroll_top)
   {
