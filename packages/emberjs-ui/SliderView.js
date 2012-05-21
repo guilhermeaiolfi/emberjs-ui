@@ -154,4 +154,3 @@ UI.SliderView = Ember.ContainerView.extend ({
     }
   })
 });
-​
