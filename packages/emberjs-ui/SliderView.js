@@ -106,7 +106,7 @@ UI.SliderView = Ember.ContainerView.extend ({
 
     return this.normalizeValue(valueMouse);
   },
-  knob: App.MouseView.extend({
+  knob: UI.MouseView.extend({
     classNames: ['ember-slider-knob'],
       tagName: 'a', 
     updatePosition: Ember.observer(function(view, property, value) {
