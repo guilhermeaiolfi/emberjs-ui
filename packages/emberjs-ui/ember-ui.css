@@ -253,11 +253,11 @@
 } 
 .ember-spinner-input 
 { 
-    height: 100%; 
     float: left; margin: 0 15px 0 0; 
-    line-height: 23px; 
+    line-height: 21px; 
     vertical-align: middle; 
     text-align: right; 
+    border: 0 solid #FFFFFF;
 }
 .ember-spinner-buttons 
 { 
