@@ -11,7 +11,6 @@ UI.SpinnerView = Ember.ContainerView.extend({
     classNames: ['ember-spinner-input'],
     valueBinding: "parentView.value",
     keyDown: function(evt) {
-      console.log("key down");
       var spinner = this.get("parentView");
       
       if (evt.keyCode === 38) { //up
