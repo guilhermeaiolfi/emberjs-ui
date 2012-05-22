@@ -86,6 +86,11 @@ UI.ScrollerView = Ember.ContainerView.extend({
         this.$().on("mousewheel", mouseWheel);
       }
   },
+  /*
+    It needs https://raw.github.com/brandonaaron/jquery-mousewheel/master/jquery.mousewheel.js
+    for that to work corretly. Mainly for the normalize function. Otherwise we could use:
+      evt.originalEvent.wheelDelta
+  */
   mouseWheel: function(evt, delta) {
       this.thumb.$().scrollTop(this.thumb.$().scrollTop() - (delta * 30));
   },
