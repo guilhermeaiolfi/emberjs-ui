@@ -4,8 +4,8 @@ UI.SliderView = Ember.ContainerView.extend ({
   childViews: ['bar', 'knob'],
   value: 0,
   orientation: 'horizontal',
-  valueMax: 100,
-  valueMin: 0,
+  maxValue: 100,
+  minValue: 0,
   step: 1,
 
     didInsertElement: function()
@@ -35,12 +35,12 @@ UI.SliderView = Ember.ContainerView.extend ({
               var size = 0, pos = 0, ratio = 1;
               if (horizontal) {
                   size = slider.$().width();
-                  ratio = size / slider.get('valueMax');
+                  ratio = size / slider.get('maxValue');
                   pos = Math.ceil(value * ratio);
               }
               else {
                   size = slider.$().height();
-                  ratio = size / slider.get('valueMax');
+                  ratio = size / slider.get('maxValue');
                   pos = Math.ceil(value * ratio);
               }
             
@@ -53,8 +53,8 @@ UI.SliderView = Ember.ContainerView.extend ({
   normalizeValue: function(val) {
 
     var step = this.get('step');
-    var max = this.get('valueMax');
-    var min = this.get('valueMin');
+    var max = this.get('maxValue');
+    var min = this.get('minValue');
     if (val <= min) {
       return min;
     }
@@ -101,12 +101,12 @@ UI.SliderView = Ember.ContainerView.extend ({
       percentMouse = 1 - percentMouse;
     }
 
-    valueTotal = this.get('valueMax') - this.get('valueMin');
-    valueMouse = this.get('valueMin') + percentMouse * valueTotal;
+    valueTotal = this.get('maxValue') - this.get('minValue');
+    valueMouse = this.get('minValue') + percentMouse * valueTotal;
 
     return this.normalizeValue(valueMouse);
   },
-  knob: UI.MouseView.extend({
+  knob: Ember.View.extend(UI.DragMixin, {
     classNames: ['ember-slider-knob'],
       tagName: 'a', 
     updatePosition: Ember.observer(function(view, property, value) {
@@ -117,12 +117,12 @@ UI.SliderView = Ember.ContainerView.extend ({
           var size = 0, pos = 0, ratio = 1;
           if (horizontal) {
               size = slider.$().width();
-              ratio = size / slider.get('valueMax');
+              ratio = size / slider.get('maxValue');
               pos = Math.ceil(value * ratio);
           }
           else {
               size = slider.$().height();
-              ratio = size / slider.get('valueMax');
+              ratio = size / slider.get('maxValue');
               pos = size - Math.ceil(value * ratio);
           }
         
