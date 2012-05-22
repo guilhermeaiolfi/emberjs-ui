@@ -292,3 +292,127 @@
     height: 50%; 
     margin-top: 1px;
 }
+
+/** COLORPICKER **/
+.ember-colorpicker 
+{ 
+    position: relative; 
+    width: 356px; 
+    height: 170px; 
+    background-color: #f1f1f1; 
+    border: 1px solid #222;
+}
+.ember-colorpicker-overlay { 
+    width: 150px; 
+    height: 150px; 
+    position: absolute; 
+    left: 10px; 
+    top: 10px; 
+    background-image: url(images/colorpicker_overlay.png);
+    overflow: hidden;
+}
+.ember-colorpicker-overlay div { 
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    top: 20px;
+    margin-top: -5px;
+    margin-left: -5px;
+    background-image: url(images/colorpicker_select.gif);
+}
+.ember-colorpicker-hue { 
+    position: absolute; 
+    left: 170px; 
+    top: 10px; 
+    height: 150px; 
+    cursor: n-resize;
+    width: 18px; 
+    border: 0 slid #FFF;
+    background-image: url(images/colorpicker_hue.png) ;
+}
+.ember-colorpicker .ember-slider-bar 
+{
+    display: none;
+}
+.ember-colorpicker-hue .ember-slider-knob 
+{ 
+    height: 9px; 
+    background-color: transparent; border-radius: 0; 
+    margin-top: -5px; 
+    width: 35px;
+    margin-left: -8px;
+    background-image: url(images/colorpicker_indic.gif);
+    border: 0px solid #FFF;
+}
+.ember-colorpicker .labels .labels_rgb
+{ 
+    position: absolute;
+    left: 203px;
+    top: 45px;
+    width: 10px;
+    height: 110px;
+}
+.ember-colorpicker .labels .labels_hsb
+{ 
+    position: absolute;
+    left: 278px;
+    top: 45px;
+    width: 10px;
+    height: 80px;
+}
+.ember-colorpicker .labels label 
+{ 
+    clear: both; 
+    display: block; 
+    height: 30px; 
+    line-height: 30px; 
+    font-size: 12px;  
+}
+
+.ember-colorpicker .ember-colorpicker-rgb 
+{
+    width: 50px;
+    top: 45px;
+    left: 215px;
+    position: absolute;
+}
+.ember-colorpicker .ember-colorpicker-hsb .ember-spinner, .ember-colorpicker .ember-colorpicker-rgb .ember-spinner 
+{
+    width: 52px;
+    margin-bottom: 5px;
+}
+
+.ember-colorpicker .ember-colorpicker-hsb 
+{
+    width: 60px;
+    top: 45px;
+    left: 290px;
+    position: absolute;
+}
+.ember-colorpicker .hex 
+{
+    position: absolute;
+    top: 136px;
+    left: 215px;
+    width: 50px;
+}
+.ember-colorpicker .selected_color 
+{
+    position: absolute;
+    top: 10px;
+    left: 215px;
+    height: 28px;
+    width: 52px;
+    border: 1px solid 
+    #C1C1C1;
+}
+
+.ember-colorpicker .reset_color 
+{
+    position: absolute;
+    top: 10px;
+    left: 290px;
+    height: 28px;
+    width: 52px;
+    border: 1px solid #C1C1C1;
+}
