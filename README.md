@@ -12,12 +12,13 @@ There is only two widgets for now:
 
 1. UI.ListView
 2. UI.SelectView
-3. TreeView
+3. UI.TreeView
 4. UI.ScrollerView
 5. UI.VirtualScrollerView ([jsFiddle](http://www.jsfiddle.net/Z7SCN/14/))
-6. Ui.CalendarView ([jsFiddle](http://jsfiddle.net/guilhermeaiolfi/enguK/))
-7. Ui.SliderView ([jsFiddle](http://jsfiddle.net/guilhermeaiolfi/NPkru/))
-7. Ui.SpinnerView ([jsFiddle](http://jsfiddle.net/guilhermeaiolfi/swWZv/))
+6. UI.CalendarView ([jsFiddle](http://jsfiddle.net/guilhermeaiolfi/enguK/))
+7. UI.SliderView ([jsFiddle](http://jsfiddle.net/guilhermeaiolfi/NPkru/))
+8. UI.SpinnerView ([jsFiddle](http://jsfiddle.net/guilhermeaiolfi/swWZv/))
+9. UI.ColorPickerView ([jsFiddle](http://jsfiddle.net/guilhermeaiolfi/gzznn/))
 
 ## Themes
 
