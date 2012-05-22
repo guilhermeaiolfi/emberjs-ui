@@ -1,5 +1,5 @@
 var UI = UI || {};
-UI.SliderView = Ember.ContainerView.extend ({
+UI.SliderView = Ember.ContainerView.extend (UI.DragMixin, {
   classNames: ['ember-slider'],
   childViews: ['bar', 'knob'],
   value: 0,
@@ -8,48 +8,47 @@ UI.SliderView = Ember.ContainerView.extend ({
   minValue: 0,
   step: 1,
 
-    didInsertElement: function()
-    {
-      this.$().addClass("ember-slider-" + this.get("orientation"));
-      this.knob.updatePosition(this.knob, "parentView.value", this.get("value"));
-      this.bar.updatePosition(this.knob, "parentView.value", this.get("value"));
-    },
-    bar: Ember.View.extend({
-        classNames: ["ember-slider-bar"],
-        didInsertElement: function()
+  didInsertElement: function()
+  {
+    this.$().addClass("ember-slider-" + this.get("orientation"));
+    this.knob.updatePosition(this.knob, "parentView.value", this.get("value"));
+    this.bar.updatePosition(this.knob, "parentView.value", this.get("value"));
+  },
+  bar: Ember.View.extend({
+      classNames: ["ember-slider-bar"],
+      didInsertElement: function()
+      {
+          var slider = this.get("parentView");
+          if (slider.get('orientation') === "horizontal") {
+              this.$().css("left", 0);
+          }
+          else {
+              this.$().css("bottom", 0);
+          }
+      },
+      updatePosition: Ember.observer(function(view, property, value) {
+        if (value !== undefined)
         {
             var slider = this.get("parentView");
-            if (slider.get('orientation') === "horizontal") {
-                this.$().css("left", 0);
+            var horizontal = slider.get("orientation") === "horizontal";
+            var size = 0, pos = 0, ratio = 1;
+            if (horizontal) {
+                size = slider.$().width();
+                ratio = size / slider.get('maxValue');
+                pos = Math.ceil(value * ratio);
             }
             else {
-                this.$().css("bottom", 0);
-            }                
-    
-        },
-        updatePosition: Ember.observer(function(view, property, value) {
-          if (value !== undefined)
-          {
-              var slider = this.get("parentView");
-              var horizontal = slider.get("orientation") === "horizontal";
-              var size = 0, pos = 0, ratio = 1;
-              if (horizontal) {
-                  size = slider.$().width();
-                  ratio = size / slider.get('maxValue');
-                  pos = Math.ceil(value * ratio);
-              }
-              else {
-                  size = slider.$().height();
-                  ratio = size / slider.get('maxValue');
-                  pos = Math.ceil(value * ratio);
-              }
-            
-              if (size > 0) {
-                  this.$().css(horizontal? "width" : "height", pos);
-              }
-          }
-        }, 'parentView.value')
-    }),
+                size = slider.$().height();
+                ratio = size / slider.get('maxValue');
+                pos = Math.ceil(value * ratio);
+            }
+          
+            if (size > 0) {
+                this.$().css(horizontal? "width" : "height", pos);
+            }
+        }
+      }, 'parentView.value')
+  }),
   normalizeValue: function(val) {
 
     var step = this.get('step');
@@ -106,9 +105,20 @@ UI.SliderView = Ember.ContainerView.extend ({
 
     return this.normalizeValue(valueMouse);
   },
-  knob: Ember.View.extend(UI.DragMixin, {
+
+  dragStart: function(evt) {
+    this.knob.dragStart(evt);
+  },
+  drag: function(evt) {
+    this.knob.drag(evt);
+  },
+  dragEnd: function(evt) {
+    this.knob.dragEnd(evt);
+  },
+
+  knob: Ember.View.extend({
     classNames: ['ember-slider-knob'],
-      tagName: 'a', 
+    tagName: 'a', 
     updatePosition: Ember.observer(function(view, property, value) {
       if (value !== undefined)
       {
@@ -131,9 +141,6 @@ UI.SliderView = Ember.ContainerView.extend ({
           }
       }
     }, 'parentView.value'),
-    didInsertElement: function()
-    {
-    },
     dragStart: function(event)
     {
       var slider = this.get("parentView");
