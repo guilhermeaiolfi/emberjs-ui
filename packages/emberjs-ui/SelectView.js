@@ -1,3 +1,4 @@
+UI = UI || {};
 UI.SelectView = Em.ContainerView.extend({
 	childViews: ['display', 'button', 'popup'],
 	viewName: 'selectView',

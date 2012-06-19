@@ -12,6 +12,7 @@
 *		{{/view}}
 **/
 
+UI = UI || {};
 UI.NodeView = Em.View.extend({
 	tagName: "li",
 	templateContext: Ember.computed(function(key, value) {
