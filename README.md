@@ -12,7 +12,7 @@ There is only two widgets for now:
 
 1. UI.ListView
 2. UI.SelectView
-3. UI.TreeView
+3. UI.TreeView ([jsFiddle (very simple)](http://jsfiddle.net/3JZbj/))
 4. UI.ScrollerView
 5. UI.VirtualScrollerView ([jsFiddle](http://www.jsfiddle.net/Z7SCN/14/))
 6. UI.CalendarView ([jsFiddle](http://jsfiddle.net/guilhermeaiolfi/enguK/))

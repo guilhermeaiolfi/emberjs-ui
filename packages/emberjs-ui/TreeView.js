@@ -13,6 +13,9 @@
 **/
 
 var UI = UI || {};
+
+get = Ember.get, set = Ember.set;
+
 UI.NodeView = Em.View.extend({
 	tagName: "li",
 	templateContext: Ember.computed(function(key, value) {
